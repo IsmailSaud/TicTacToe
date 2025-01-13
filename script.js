@@ -46,7 +46,7 @@ function checkWinner() {
         const boxC = dropBoxes[c].children[0]?.className;
 
         if (boxA && boxA === boxB && boxA === boxC) {
-            alert(`${currentTurn.slice(0)} wins!`);
+            alert(`${currentTurn} wins!`);
             disableBoard();
         }
     });
@@ -58,23 +58,6 @@ function disableBoard() {
         box.style.pointerEvents = 'none';
     });
 }
-
-// function resetGame() {
-//     const dropBoxes = document.querySelectorAll('.dropBox');
-//     dropBoxes.forEach(box => {
-//         if (box.children.length > 0) {
-//             const piece = box.children[0];
-//             const originalBox = document.querySelector(`#${piece.id}`).parentNode;
-//             originalBox.appendChild(piece);
-//         }
-//         box.innerHTML = '';
-//         box.style.pointerEvents = 'auto';
-//     });
-//     currentTurn = 'cross';
-// }
-
-// const resetButton = document.querySelector('.reset');
-// resetButton.addEventListener('click', resetGame);
 
 function resetGame() {
     location.reload();
